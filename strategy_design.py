@@ -31,10 +31,14 @@ class User(object):
         self.acc_type = acc_type
         self.account_type = AccountType()
         
+        if acc_type == None and amount == None:
+            self.acc_type = 'Basic'
+            self.default_amount_by_types()
         if amount == None and acc_type != None:
             self.default_amount_by_types()
         if acc_type == None and amount != None:
             self.determine_type()
+       
 
 
     def determine_type(self):
@@ -52,6 +56,8 @@ class User(object):
 if __name__ == "__main__":
     usr_1 = User(fullname='Kelvin Kinuthia', id_no='12345678', phone='2547123456', amount=3000)
     usr_2 = User(fullname='David Letoo', id_no='1234567', phone='2547123456', acc_type='Advanced')
+    usr_3 = User(fullname='David Letoo', id_no='123434', phone='2547121236')
 
     print(usr_1)
     print(usr_2)
+    print(usr_3)

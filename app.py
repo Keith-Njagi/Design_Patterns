@@ -56,10 +56,14 @@ class User(object):
         self.acc_type = acc_type
         self.account_type = AccountType()
         
+        if len(acc_type) == 0 and len(amount) == 0:
+            self.acc_type = 'Basic'
+            self.default_amount_by_types()
         if len(amount) == 0 and acc_type != None:
             self.default_amount_by_types()
         if len(acc_type)== 0 and amount != None:
             self.determine_type()
+        
 
     def determine_type(self):
         self.acc_type = self.account_type.determine_type(self.amount)
