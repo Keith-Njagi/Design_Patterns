@@ -31,7 +31,7 @@ class AccountType(object):
         amount = int(amount)
         if amount <= 5000:
             account_type = "Basic"
-        elif 5001<= amount >= 15000:
+        elif 5001<= amount <= 15000:
             account_type = "Advanced"
         else:
             account_type = "Premium"
