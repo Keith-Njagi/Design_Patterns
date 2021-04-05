@@ -9,6 +9,7 @@ SECRET_KEY = '987rgsc9xm89ehckl'
 SQLALCHEMY_DATABASE_URI = './sqlite:///db.sqlite3'
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 
+# Database Model
 class UserModel (db.Model):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
@@ -22,7 +23,7 @@ class UserModel (db.Model):
         db.session.add(self)
         db.session.commit()
 
-
+# Account Type object for the strategy design
 class AccountType(object):
     def __init__(self):
         super(AccountType, self).__init__()
@@ -46,7 +47,7 @@ class AccountType(object):
             amount = 20000
         return amount
 
-
+# User object for the strategy design
 class User(object):
     def __init__(self, fullname, id_no, phone, amount=None, acc_type = None):
         self.fullname = fullname
@@ -76,10 +77,12 @@ class User(object):
     def __repr__(self):
         return f'{self.fullname} has registered a new account of type {self.acc_type} with amount {self.amount}'
 
+# Ensure all tables are created in the database
 @app.before_first_request
 def create_tables():
     db.create_all()
 
+# Routes
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'GET':
