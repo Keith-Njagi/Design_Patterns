@@ -13,8 +13,8 @@ To run the composite_design file:   python composite_design.py
 
 How it works in strategy_design:
 
-If I enter the amount and leave the acc_type, acc_type will be automatically determined
-If I enter acc_type and leave the amount, the default amount will be automatically determined
+If I enter the amount and leave the acc_type blank, acc_type will be automatically determined
+If I enter acc_type and leave the amount blank, the default amount will be automatically determined
 If I leave both acc_type and amount blank, the defaults will be set to the "Basic" acc_type
 
 
