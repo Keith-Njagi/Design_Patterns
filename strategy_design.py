@@ -51,7 +51,7 @@ class User(object):
 
 if __name__ == "__main__":
     usr_1 = User(fullname='Kelvin Kinuthia', id_no='12345678', phone='2547123456', amount=3000)
-    usr_2 = User(fullname='David Letoo', id_no='12345678', phone='2547123456', acc_type='Advanced')
+    usr_2 = User(fullname='David Letoo', id_no='1234567', phone='2547123456', acc_type='Advanced')
 
     print(usr_1)
     print(usr_2)

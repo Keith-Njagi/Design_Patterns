@@ -61,7 +61,6 @@ class User(object):
         if len(acc_type)== 0 and amount != None:
             self.determine_type()
 
-
     def determine_type(self):
         self.acc_type = self.account_type.determine_type(self.amount)
         return self.acc_type
@@ -101,9 +100,6 @@ def index():
         new_user.insert_record()
 
         return redirect(url_for('index'))
-
-
-
 
 
 if __name__ == '__main__':

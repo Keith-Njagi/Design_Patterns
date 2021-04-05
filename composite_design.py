@@ -10,7 +10,6 @@ class User(object):
 		# print("\t", end ="")
 		print(self.fullname, '\n', self.id_no, '\n', self.phone, '\n', self.amount)
 
-
 class AccountType(object):
 	def __init__(self, acc_type):
 		self.acc_type = acc_type
@@ -34,11 +33,14 @@ if __name__ == "__main__":
 	AccountType3 = AccountType('Premium')
 
 	User1 = User(fullname='Kelvin Kinuthia', id_no='12345678', phone='2547123456', amount=3000)
+	User3 = User(fullname='David Kinuthia', id_no='12345645', phone='2547156456', amount=2000)
 	User2 = User(fullname='David Letoo', id_no='12345678', phone='2547123456', amount=6000)
 
 
 	AccountType1.add(User1)
+	AccountType1.add(User3)
 	AccountType2.add(User2)
+
 	print("------")
 	AccountType1.showDetails()
 	print("------")
