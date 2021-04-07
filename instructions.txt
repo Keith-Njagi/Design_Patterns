@@ -1,7 +1,7 @@
 To set up flask:
     1. create virtual environment with:  python -m venv venv
     2. activate virtual environment with: 
-        a. For windows computer:  venv/Scripts/activate
+        a. For windows computer:  venv\Scripts\activate
         b. For linux computer: source venv/bin/activate
 
     3. pip install flask flask-sqlalchemy
