@@ -1,13 +1,17 @@
 from flask import Flask, request, render_template, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 
+class BaseConfig:
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///db.sqlite3'
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SECRET_KEY = '987rgsc9xm89ehckl'
+
+
 app = Flask(__name__)
 
-db = SQLAlchemy(app)
+app.config.from_object(BaseConfig)
 
-SECRET_KEY = '987rgsc9xm89ehckl'
-SQLALCHEMY_DATABASE_URI = './sqlite:///db.sqlite3'
-SQLALCHEMY_TRACK_MODIFICATIONS = False
+db = SQLAlchemy(app)
 
 # Database Model
 class UserModel (db.Model):
